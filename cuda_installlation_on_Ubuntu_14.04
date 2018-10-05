@@ -43,3 +43,25 @@ sudo apt-get remove nvidia-cuda-toolkit
 Uninstall nvidia-cuda-toolkit and it's dependencies
 sudo apt-get remove --auto-remove nvidia-cuda-toolkit
 sudo apt-get autoremove --purge cuda
+
+*******************************************OR*******************************************
+https://developer.nvidia.com/cuda-toolkit-42-archive
+Go to the directory where you downloaded the files, type: (If desktop then type cd Desktop)
+
+chmod +x cudatoolkit_4.2.9_linux_64_ubuntu11.04.run sudo
+
+./cudatoolkit_4.2.9_linux_64_ubuntu11.04.run
+Use default install paths, unless you have a reason not to. i.e Press ENTER
+
+Add Environmental variables:
+export PATH=/usr/local/cuda/bin:$PATH
+
+#for 64-bit machines:
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/lib:$LD_LIBRARY_PATH
+
+#for 32-bit machines:
+export LD_LIBRARY_PATH=/usr/local/cuda/lib:$LD_LIBRARY_PATH
+
+Now we want to test did the toolkit install properly:
+nvcc --version
+*************************************************************************

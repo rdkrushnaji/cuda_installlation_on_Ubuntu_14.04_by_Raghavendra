@@ -1,0 +1,2 @@
+# cuda_installlation_on_Ubuntu_14.04_by_Raghavendra
+cuda_installlation_on_Ubuntu_14.04_by_Raghavendra

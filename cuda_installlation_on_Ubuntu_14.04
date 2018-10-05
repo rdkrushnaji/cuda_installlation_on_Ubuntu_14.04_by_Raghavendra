@@ -1,0 +1,45 @@
+https://developer.nvidia.com/cuda-75-downloads-archive
+sudo apt-get update
+Download Target Installer for Linux Ubuntu 14.04 x86_64
+cuda_7.5.18_linux.run (md5sum: 4b3bcecf0dfc35928a0898793cf3e4c6)
+Installation Instructions:
+Run `sudo sh cuda_7.5.18_linux.run`
+Follow the command-line prompts
+/*************************error**********************************
+It appears that an X server is running. Please exit X before
+installation. If you're sure that X is not running, but are
+getting this error, please delete any X lock files in /tmp.
+cd /tmp
+rm -rf .X0-lock
+***************************************************************/
+Driver: Installed
+Toolkit: Installed in /usr/local/cuda-7.5
+Samples: Installed in /home/radheya
+Please make sure that
+- PATH includes /usr/local/cuda-7.5/bin
+- LD_LIBRARY_PATH includes /usr/local/cuda-7.5/lib64, or, add
+/usr/local/cuda-7.5/lib64 to /etc/ld.so.conf and run ldconfig as
+root
+To uninstall the CUDA Toolkit, run the uninstall script in
+/usr/local/cuda-7.5/bin
+To uninstall the NVIDIA Driver, run nvidia-uninstall
+Please see CUDA_Installation_Guide_Linux.pdf in
+/usr/local/cuda-7.5/doc/pdf for detailed information on setting
+up CUDA.
+Logfile is /tmp/cuda_install_3040.log
+
+steps to run cuda
+1. sudo apt-get update
+2. sudo apt-get install gcc-4.7 g++-4.7
+3. sudo ln -s /usr/bin/gcc-4.7 /usr/local/cuda/bin/gcc
+4. if already exist then run this sudo rm -r
+/usr/local/cuda/bin/gcc
+5. export LD_LIBRARY_PATH=/usr/local/cuda-7.5/lib64:
+$LD_LIBRARY_PATH
+6. export PATH=/usr/local/cuda-7.5/bin:$PATH
+7. Then run the cuda code
+Uninstall just nvidia-cuda-toolkit
+sudo apt-get remove nvidia-cuda-toolkit
+Uninstall nvidia-cuda-toolkit and it's dependencies
+sudo apt-get remove --auto-remove nvidia-cuda-toolkit
+sudo apt-get autoremove --purge cuda
